@@ -13,9 +13,23 @@ var katzDeli = [];
 
 //INSTRUCTIONS WERE COMPLETE UNCLEAR ... following new instructions provided by error text
 
+var katzDeliQueue=[]
+var i=0;
+
+function takeANumberOnly (katzDeliLine) {
+  katzDeliLine[i] = i+1;
+  i++;
+  return i;
+
+  
+}
+
+
 function takeANumber (katzDeliLine, newName){
 
+
   katzDeliLine.push(newName); //this should do the appending
+  //katzDeliLine[katzDeliLine.length-1].number
   return `Welcome, ${katzDeliLine[katzDeliLine.length-1]}. You are number ${katzDeliLine.length} in line.`
   //So... originally I had ${newName}, but let's see what this galaxy-class starship can do
 }
@@ -35,13 +49,13 @@ if (katzDeliLine.length === 0) {
 
     //return katzDeliLine[0];   oh shit that terminates the function so we have to do something smarter
 
-    //var currentlyServed = katzDeliLine [0];
+    var currentlyServed = katzDeliLine [0];
     // ^^ this preserves the first element
-    //katzDeliLine.shift();
+    katzDeliLine.shift();
     // ^^ chops off the array's head... after we took note of what the element was
 
-    //return `Currently serving ${currentlyServed}.`;
-    return katzDeliLine.shift();
+    return `Currently serving ${currentlyServed}.`;
+    
   }
 }
 
@@ -72,7 +86,7 @@ function currentLine(lineArray){
     Since it wasn't possible to get it right, as the first element's border is inherently different from the rest, as the comma is in the spread and not the string...
     I found that specifically specifying the first element was the simplest way to bypass this problem.*/ //Aside from the i win button...
   for (var i = 1; i < lineArray.length; i++) {
-    returnsArray[i] = `${i+1}. ${lineArray[i]}`;
+    returnsArray[i] = ` ${i+1}. ${lineArray[i]}`;
     //numberingArray[i] = `${i+1}.`
   }
   return `The line is currently: ${returnsArray}`;
