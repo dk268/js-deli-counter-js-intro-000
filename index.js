@@ -35,12 +35,13 @@ if (katzDeliLine.length === 0) {
 
     //return katzDeliLine[0];   oh shit that terminates the function so we have to do something smarter
 
-    var currentlyServed = katzDeliLine [0];
+    //var currentlyServed = katzDeliLine [0];
     // ^^ this preserves the first element
-    katzDeliLine.shift();
+    //katzDeliLine.shift();
     // ^^ chops off the array's head... after we took note of what the element was
 
-    return `Currently serving ${currentlyServed}.`;
+    //return `Currently serving ${currentlyServed}.`;
+    return katzDeliLine.shift();
   }
 }
 
@@ -63,14 +64,14 @@ function currentLine(lineArray){
     // yeah that should do it... element 4 would be like "the line is currently: 3. Whatsitsname, the 3rd element in the thing"
     return returnsArray;
   } */ //Actually we may not have needed that at all.
-  returnsArray[0] = `1. ${lineArray[0]}`
+  //returnsArray[0] = `1. ${lineArray[0]}`
   /* I was having a devil of a time getting it to print properly. Also, WTF it just spreads the array without instruction?
     So if I didn't specify this first element, I'd get the erroroneous output
     "The line is currently 1. Whoever2. Whoever 3.Whoever" and was unable to correct it; moving a space would get
     "The line is currently:  1. Whoever 2. Whoever (see the extra space?)"
     Since it wasn't possible to get it right, as the first element's border is inherently different from the rest, as the comma is in the spread and not the string...
     I found that specifically specifying the first element was the simplest way to bypass this problem.*/ //Aside from the i win button...
-  for (var i = 1; i < lineArray.length; i++) {
+  for (var i = 0; i < lineArray.length; i++) {
     returnsArray[i] = ` ${i+1}. ${lineArray[i]}`;
     //numberingArray[i] = `${i+1}.`
   }
