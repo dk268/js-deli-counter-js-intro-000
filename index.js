@@ -21,7 +21,7 @@ function takeANumberOnly (katzDeliLine) {
   i++;
   return i;
 
-  
+
 }
 
 
@@ -55,7 +55,7 @@ if (katzDeliLine.length === 0) {
     // ^^ chops off the array's head... after we took note of what the element was
 
     return `Currently serving ${currentlyServed}.`;
-    
+
   }
 }
 
