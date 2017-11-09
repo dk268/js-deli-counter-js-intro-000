@@ -72,7 +72,7 @@ function currentLine(lineArray){
     Since it wasn't possible to get it right, as the first element's border is inherently different from the rest, as the comma is in the spread and not the string...
     I found that specifically specifying the first element was the simplest way to bypass this problem.*/ //Aside from the i win button...
   for (var i = 0; i < lineArray.length; i++) {
-    returnsArray[i] = ` ${i+1}. ${lineArray[i]}`;
+    returnsArray[i] = `${i+1}. ${lineArray[i]}`;
     //numberingArray[i] = `${i+1}.`
   }
   return `The line is currently: ${returnsArray}`;
